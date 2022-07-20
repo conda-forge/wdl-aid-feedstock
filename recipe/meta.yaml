@@ -22,7 +22,7 @@ requirements:
     - python >=3.6
   run:
     - jinja2
-    - miniwdl ==0.5
+    - miniwdl >=1.0
     - python >=3.6
 
 test:
