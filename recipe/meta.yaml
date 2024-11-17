@@ -1,13 +1,13 @@
 {% set name = "WDL-AID" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 96d1706cdca8d83d9df096aa4a4dfa3ad44581f1cc530f214dcc5bac115dddc7
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 2cafbf2f35c2f90eb49571441904b42dfe16fb4e81b8062228dae2290fb276a2
 
 build:
   noarch: python
