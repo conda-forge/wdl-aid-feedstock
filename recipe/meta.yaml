@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - wdl-aid=wdl_aid.wdl_aid:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python 3.6
+    - python {{ python_min }}
     - setuptools
   run:
     - jinja2
     - miniwdl >=1.0
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools
 
 test:
@@ -34,7 +34,7 @@ test:
   commands:
     - wdl-aid --help
   requires:
-    - python 3.6
+    - python {{ python_min }}
 
 about:
   home: https://github.com/biowdl/wdl-aid
